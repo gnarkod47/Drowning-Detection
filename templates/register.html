@@ -1,0 +1,64 @@
+<!-- register.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDetect_V2 - Register</title>
+    <link rel="stylesheet" href="static/log_style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <div class="form">
+            <form id="registerForm" method="post">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="email">
+                </div>
+                <button type="submit" class="button"><span>Register</span></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the form data
+            const formData = new FormData(this);
+
+            // Send the form data to the backend for registration
+            fetch('/register', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // If registration is successful, redirect to login page
+                    window.location.href = '/login';
+                } else {
+                    // If registration fails, show an error message
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+<footer>&copyGnarkod007</footer>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDetect_V2 - Login</title>
+    <link rel="stylesheet" href="static/log_style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="form">
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="button"><span>Login</span></button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the form data
+            const formData = new FormData(this);
+
+            // Send the form data to the backend for verification
+            fetch('/login', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("inside the referencing")
+                if (data.success) {
+                    // If credentials are valid, redirect to functional.html
+                    console.log("inside the functional referencing")
+                    window.location.href = 'functional';
+                } else {
+                    // If credentials are invalid, show an error message
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+<footer>&copyGnarkod007</footer>
+
+</html>

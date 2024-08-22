@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+body {
+    background-image: url(pool1.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    overflow: hidden;
+    font-family: "Cairo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+.container {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 19vh;
+    animation: float 1s ease-in-out;
+}
+
+@keyframes loading {
+    from {
+        opacity: 0;
+        margin-top: 90px;
+    }
+
+    to {
+        opacity: 1;
+        /* margin-top:100px; */
+    }
+}
+
+@keyframes float {
+    from {
+        margin-top: 30vh;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.container>div {
+    /* animation: float 1s ease-in ; */
+    font-size: 120px;
+    color: #b9e3ee;
+}
+
+.container>div:hover {
+    transition: all 1s;
+    text-shadow: 5px 5px 10px #070707;
+}
+
+.buttons {
+    animation: loading 1s ease-in;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.buttons>button {
+    font-size: large;
+    color: #4099c2;
+    background-color: rgb(0, 40, 78);
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 28px;
+    transition: all 0.5s;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    text-align: right;
+    width: 99%;
+    color: #b9e3ee;
+}
+
+.button-40 {
+    background-color: rgb(0, 40, 78);
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #4099c2;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+}
+
+.button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+h1 {
+    color: #b9e3ee;
+    padding-top: 40px;
+    text-align: center;
+    margin: 0;
+    font-size: 50px;
+}
