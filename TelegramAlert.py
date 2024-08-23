@@ -1,10 +1,10 @@
 import requests
 import time
 # Your Telegram Bot API Token
-token = '7136100100:AAGLJar3F6je1DI-0gjJ1WV56yoQC3jGfTw'
+token = ''
 
 # Your personal chat ID
-chat_id = '512680485'
+chat_id = ''
 message = 'Alert! Drowning detected near the premises'
 # Method to send a message to your Telegram account
 def send_telegram_message():
